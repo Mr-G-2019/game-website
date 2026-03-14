@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞翔小鸟</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #gameCanvas { 
+            background: linear-gradient(to bottom, #70c5ce 0%, #d4f1f9 100%) !important;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐦 飞翔小鸟</h1>
+        <div class="game-info">
+            <div>得分: <span id="score" class="score">0</span></div>
+            <div>最高分: <span id="highScore" class="score">0</span></div>
+        </div>
+        <canvas id="gameCanvas" width="320" height="480"></canvas>
+        <div class="game-controls">
+            <button class="game-btn game-btn-primary" id="startBtn">开始游戏</button>
+        </div>
+        <p style="margin-top: 20px; color: #888;">点击屏幕或按空格键飞翔</p>
+    </div>
+    <script src="flappy.js"></script>
+</body>
+</html>
