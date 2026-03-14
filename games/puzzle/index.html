@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图游戏</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        .puzzle-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #gameCanvas { 
+            background: #0f0f23 !important;
+            cursor: pointer;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+        }
+        .preview-container {
+            text-align: center;
+            color: white;
+        }
+        #previewCanvas {
+            border-radius: 10px;
+            border: 3px solid #667eea;
+        }
+        .difficulty-selector {
+            margin: 10px 0;
+        }
+        .difficulty-selector button {
+            margin: 0 5px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background: #1a1a3e;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .difficulty-selector button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        @media (max-width: 700px) {
+            .puzzle-container { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🧩 拼图游戏</h1>
+        <div class="game-info">
+            <div>步数: <span id="moves" class="score">0</span></div>
+            <div>时间: <span id="time" class="score">00:00</span></div>
+        </div>
+        <div class="difficulty-selector">
+            <button class="diff-btn active" data-size="3">简单 (3×3)</button>
+            <button class="diff-btn" data-size="4">中等 (4×4)</button>
+            <button class="diff-btn" data-size="5">困难 (5×5)</button>
+        </div>
+        <div class="puzzle-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div class="preview-container">
+                <h3>原图预览</h3>
+                <canvas id="previewCanvas" width="150" height="150"></canvas>
+            </div>
+        </div>
+        <div class="game-controls">
+            <button class="game-btn game-btn-primary" id="startBtn">开始游戏</button>
+            <button class="game-btn game-btn-primary" id="shuffleBtn">重新打乱</button>
+        </div>
+    </div>
+    <script src="puzzle.js"></script>
+</body>
+</html>
