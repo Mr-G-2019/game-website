@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆翻牌</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .card:hover { transform: scale(1.05); }
+        .card.flipped { background: #1a1a3e; }
+        .card.matched { 
+            background: linear-gradient(135deg, #00c851 0%, #007e33 100%);
+            animation: matchPulse 0.5s ease;
+        }
+        .card-content {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .card.flipped .card-content,
+        .card.matched .card-content {
+            opacity: 1;
+        }
+        @keyframes matchPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @media (max-width: 600px) {
+            .memory-grid { gap: 10px; }
+            .card { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🃏 记忆翻牌</h1>
+        <div class="game-info">
+            <div>步数: <span id="moves" class="score">0</span></div>
+            <div>时间: <span id="time" class="score">00:00</span></div>
+            <div>最佳: <span id="best" class="score">-</span></div>
+        </div>
+        <div class="memory-grid" id="gameGrid"></div>
+        <div class="game-controls">
+            <button class="game-btn game-btn-primary" id="startBtn">开始游戏</button>
+        </div>
+    </div>
+    <script src="memory.js"></script>
+</body>
+</html>
