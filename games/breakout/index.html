@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打砖块</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #gameCanvas { 
+            background: #0f0f23 !important;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🏓 打砖块</h1>
+        <div class="game-info">
+            <div>得分: <span id="score" class="score">0</span></div>
+            <div>生命: <span id="lives" class="score">❤️❤️❤️</span></div>
+            <div>等级: <span id="level" class="score">1</span></div>
+        </div>
+        <canvas id="gameCanvas" width="480" height="400"></canvas>
+        <div class="game-controls">
+            <button class="game-btn game-btn-primary" id="startBtn">开始游戏</button>
+        </div>
+        <div class="mobile-controls">
+            <button class="control-btn" data-action="left">←</button>
+            <button class="control-btn" data-action="right">→</button>
+        </div>
+        <p style="margin-top: 20px; color: #888;">← → 或鼠标移动控制挡板</p>
+    </div>
+    <script src="breakout.js"></script>
+</body>
+</html>
