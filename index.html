@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏乐园 - H5 小游戏合集</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎮 游戏乐园</h1>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">首页</a>
+                <a href="#games" class="nav-link">游戏列表</a>
+                <a href="#about" class="nav-link">关于</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2 class="hero-title">欢迎来到游戏乐园</h2>
+                <p class="hero-desc">精选 H5 小游戏，即开即玩，无需下载</p>
+                <a href="#games" class="btn btn-primary">开始游戏</a>
+            </div>
+        </section>
+
+        <section id="games" class="games-section">
+            <div class="container">
+                <h2 class="section-title">🎯 游戏列表</h2>
+                <div class="games-grid">
+                    <div class="game-card" data-game="snake">
+                        <div class="game-icon">🐍</div>
+                        <h3 class="game-title">贪吃蛇</h3>
+                        <p class="game-desc">经典怀旧游戏，控制蛇吃食物变长</p>
+                        <span class="game-tag">休闲</span>
+                        <button class="btn btn-play" onclick="openGame('snake')">开始游戏</button>
+                    </div>
+
+                    <div class="game-card" data-game="tetris">
+                        <div class="game-icon">🧱</div>
+                        <h3 class="game-title">俄罗斯方块</h3>
+                        <p class="game-desc">消除方块，挑战高分</p>
+                        <span class="game-tag">益智</span>
+                        <button class="btn btn-play" onclick="openGame('tetris')">开始游戏</button>
+                    </div>
+
+                    <div class="game-card" data-game="memory">
+                        <div class="game-icon">🃏</div>
+                        <h3 class="game-title">记忆翻牌</h3>
+                        <p class="game-desc">考验记忆力，找出相同的牌</p>
+                        <span class="game-tag">记忆</span>
+                        <button class="btn btn-play" onclick="openGame('memory')">开始游戏</button>
+                    </div>
+
+                    <div class="game-card" data-game="breakout">
+                        <div class="game-icon">🏓</div>
+                        <h3 class="game-title">打砖块</h3>
+                        <p class="game-desc">控制挡板反弹球，击碎所有砖块</p>
+                        <span class="game-tag">动作</span>
+                        <button class="btn btn-play" onclick="openGame('breakout')">开始游戏</button>
+                    </div>
+
+                    <div class="game-card" data-game="flappy">
+                        <div class="game-icon">🐦</div>
+                        <h3 class="game-title">飞翔小鸟</h3>
+                        <p class="game-desc">点击屏幕让小鸟飞翔，避开管道</p>
+                        <span class="game-tag">休闲</span>
+                        <button class="btn btn-play" onclick="openGame('flappy')">开始游戏</button>
+                    </div>
+
+                    <div class="game-card" data-game="puzzle">
+                        <div class="game-icon">🧩</div>
+                        <h3 class="game-title">拼图游戏</h3>
+                        <p class="game-desc">移动拼图块，还原完整图片</p>
+                        <span class="game-tag">益智</span>
+                        <button class="btn btn-play" onclick="openGame('puzzle')">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">关于</h2>
+                <p>这是一个基于 HTML5 Canvas 的游戏合集网站，所有游戏均使用原生 JavaScript 开发。</p>
+                <p>游戏支持桌面和移动端访问，自动适配屏幕尺寸。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 游戏乐园 - Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- 游戏模态框 -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">游戏</h3>
+                <button class="close-btn" onclick="closeGame()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="gameFrame" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
